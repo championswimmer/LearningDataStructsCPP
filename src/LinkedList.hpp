@@ -20,5 +20,7 @@ void printList (List L);
 void insertAfter (int X, Pos P);
 void insertBefore (int X, Pos &P);
 Pos findPos (int X, List L);
+Pos findPrevPos (int X, List L);
+void deleteItem(int X, List &L);
 
 #endif /* LINKEDLIST_HPP_ */

@@ -46,6 +46,29 @@ Pos findPos (int X, List L) {
 			P = P->Next;
 		}
 }
+Pos findPrevPos (int X, List L) {
+	if (isEmpty(L)) return 0;
+	Pos P = L;
+		while (P != NULL) {
+			if (P->Next->Val == X) return P;
+			P = P->Next;
+		}
+}
+
+void deleteItem(int X, List &L) {
+	if (isEmpty(L)) return;
+	Pos P = L;
+	if (isLast(P)) {
+		free(P);
+		free(L);
+		return;
+	}
+	P = findPrevPos(X, L);
+	Pos T = P->Next;
+	P->Next = P->Next->Next;
+	free(T);
+
+}
 
 void insertAfter (int X, Pos P) {
 	Pos T = (Node*)malloc(sizeof(struct Node));

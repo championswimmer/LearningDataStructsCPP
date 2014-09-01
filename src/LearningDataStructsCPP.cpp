@@ -29,4 +29,8 @@ void LinkedListOps() {
 	insertAfter(20, findPos(10, L));
 	printf("\n");
 	printList(L);
+	printf("\n");
+	deleteItem(30, L);
+	printList(L);
+
 }
